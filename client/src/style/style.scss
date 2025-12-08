@@ -1,0 +1,22 @@
+//GLOBAL
+
+@use "./global/variables";
+@use "./global/mixins";
+@use "./global/reboot";
+@use "./global/container";
+@use "./global/visually-hidden";
+
+//BLOCKS
+
+@use "./blocks/custom-input";
+@use "./blocks/btn";
+@use "./blocks/auth";
+@use "./blocks/logo";
+@use "./blocks/header";
+@use "./blocks/search-bar";
+@use "./blocks/hero";
+@use "./blocks/top-films";
+@use "./blocks/footer";
+@use "./blocks/movie-page";
+@use "./blocks/profile";
+@use "./blocks/genre-page";

@@ -1,0 +1,34 @@
+@use "../global/variables" as *;
+
+.footer {
+  width: 100%;
+  padding: 42px 0;
+
+  &__wrapper {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+  }
+
+  &__item {
+    display: flex;
+    cursor: pointer;
+
+    & a {
+      color: $color-white;
+      transition: color $transition-300;
+    }
+
+    &:hover,
+    &:focus-visible {
+      a {
+        color: $color-white-70;
+      }
+    }
+  }
+}

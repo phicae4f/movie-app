@@ -1,0 +1,88 @@
+@use "../global/variables" as *;
+
+.header {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  $root: &;
+
+  &__wrapper {
+    padding: 24px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+  }
+
+  &__middle {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  &__item {
+    position: relative;
+    a {
+      cursor: pointer;
+      font-family: $ff-play;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 32px;
+      color: $color-white;
+      transition: color $transition-300;
+      
+      &.active {
+        &::after {
+          position: absolute;
+          content: "";
+          height: 1px;
+          left: 0;
+          bottom: -8px;
+          width: 100%;
+          background-color: $color-pink;
+        }
+      }
+    }
+
+
+    &:hover,
+    &:focus-visible {
+      & a {
+        color: $color-white-50;
+      }
+
+      &.active {
+        & a {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  &__search-bar {
+    width: 656px;
+  }
+
+  &__btn {
+    font-family: $ff-play;
+    font-size: 24px;
+    line-height: 32px;
+    color: $color-white;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition: color $transition-300;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-white-50;
+    }
+  }
+}

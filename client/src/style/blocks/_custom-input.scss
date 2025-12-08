@@ -1,0 +1,76 @@
+@use "../global/variables" as *;
+
+.custom-input {
+  width: 100%;
+  position: relative;
+  $root: &;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+
+  &__icon {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    color: $color-black-40;
+    transition: color $transition-300;
+  }
+
+  &__field {
+    padding: 16px 16px 16px 52px;
+    height: 56px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid $color-black-40;
+    font-family: $ff-play;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: $color-black;
+    outline: none;
+    transition: border $transition-300;
+
+    &::placeholder {
+      font-family: $ff-play;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      color: $color-black-40;
+    }
+  }
+
+  &__error {
+    color: $color-red;
+  }
+
+  &:hover,
+  &:focus-visible {
+    #{$root}__field {
+      border: 1px solid $color-black-70;
+    }
+    #{$root}__icon {
+      color: $color-black;
+    }
+  }
+
+  &--error {
+    #{$root}__field {
+      border: 1px solid $color-red;
+    }
+    #{$root}__icon {
+      color: $color-red;
+    }
+
+    &:hover,
+    &:focus-visible {
+      #{$root}__field {
+        border: 1px solid $color-red;
+      }
+      #{$root}__icon {
+        color: $color-red;
+      }
+    }
+  }
+}
