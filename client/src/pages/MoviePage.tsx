@@ -6,12 +6,24 @@ import { Icon } from "../ui/Icon";
 import { formatTime } from "../utils/formatTime";
 import { Button } from "../ui/Button";
 import { FavouriteButton } from "../components/FavouriteButton";
+import { openTrailerModal } from "../store/slices/trailerSlice";
 
 export const MoviePage = () => {
   const { id } = useParams();
   const { currentMovie } = useAppSelector((state) => state.movie);
+  
 
   const dispatch = useAppDispatch();
+
+  const handleOpenTrailer = () => {
+      if(currentMovie?.trailerYouTubeId && currentMovie.title) {
+        dispatch(openTrailerModal({
+          title: currentMovie.title,
+          youtubeId: currentMovie.trailerYouTubeId
+        }))
+      }
+    }
+
   useEffect(() => {
     if (id) {
       dispatch(fetchMovieById(Number(id)));
@@ -44,7 +56,7 @@ export const MoviePage = () => {
               </div>
               <ul className="movie-page__bottom">
                 <li className="movie-page__bottom-item">
-                  <Button type="button" text="Трейлер" />
+                  <Button type="button" text="Трейлер" onClick={handleOpenTrailer}/>
                 </li>
                 <li className="movie-page__bottom-item">
                   <FavouriteButton movieId={Number(currentMovie?.id)} />

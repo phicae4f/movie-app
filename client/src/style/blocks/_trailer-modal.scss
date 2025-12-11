@@ -1,0 +1,110 @@
+@use "../global/variables" as *;
+
+.trailer-modal {
+  $root: &;
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-black-70;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  &__video-wrapper {
+    position: relative;
+    width: 960px;
+    height: 540px;
+    background-color: $color-dark-gray;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      #{$root}__title {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  &__title {
+    opacity: 0;
+    position: absolute;
+    left: 20px;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96%;
+    background-color: $color-black-20;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: $color-white;
+    bottom: 20px;
+    transition: opacity $transition-300;
+  }
+
+  &__btn-close {
+    position: absolute;
+    right: -70px;
+    top: 0;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px;
+    color: $color-black;
+    cursor: pointer;
+    transition: color $transition-300;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-dark-gray;
+    }
+  }
+
+  &__btn-control {
+    position: absolute;
+    z-index: 2000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px;
+    color: $color-black;
+    background-color: $color-white;
+    cursor: pointer;
+    transition: color $transition-300;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-dark-gray;
+    }
+  }
+}

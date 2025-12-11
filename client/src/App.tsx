@@ -7,11 +7,14 @@ import { ModalContainer } from "./components/ModalContainer";
 import { GenresPage } from "./pages/GenresPage";
 import { MoviePage } from "./pages/MoviePage";
 import { MyProfilePage } from "./pages/MyProfilePage";
+import { FilteredMoviesPage } from "./pages/FilteredMoviesPage";
+import { TrailerContainer } from "./components/TrailerContainer";
 
 function App() {
   return (
     <BrowserRouter>
       <ModalContainer />
+      <TrailerContainer />
       <Routes>
         <Route
           path="/"
@@ -26,6 +29,14 @@ function App() {
           element={
               <Layout>
                 <GenresPage />
+              </Layout>
+          }
+        />
+        <Route
+          path="/movies"
+          element={
+              <Layout>
+                <FilteredMoviesPage />
               </Layout>
           }
         />

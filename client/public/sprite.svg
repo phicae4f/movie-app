@@ -74,6 +74,19 @@
             d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"
             fill="currentColor" />
     </symbol>
+    <symbol id="icon-back" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M18.047 20.0012L26.2967 28.2507L23.9397 30.6077L13.333 20.0012L23.9397 9.39453L26.2967 11.7515L18.047 20.0012Z"
+            fill="currentColor" />
+    </symbol>
+    <symbol id="icon-pause" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 5H13.3333V35H10V5ZM26.6667 5H30V35H26.6667V5Z" fill="currentColor" />
+    </symbol>
+    <symbol id="icon-play" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M10 33.6595V6.34035C10 5.0313 11.4399 4.23322 12.55 4.92702L34.4053 18.5867C35.4498 19.2393 35.4498 20.7605 34.4053 21.4133L12.55 35.0728C11.4399 35.7667 10 34.9687 10 33.6595Z"
+            fill="currentColor" />
+    </symbol>
 
 
 </svg>

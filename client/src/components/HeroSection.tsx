@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/redux";
 import { fetchRandomMovie } from "../store/slices/movieSlice";
 import { Button } from "../ui/Button";
@@ -6,10 +6,21 @@ import { Icon } from "../ui/Icon";
 import { formatTime } from "../utils/formatTime";
 import { Link } from "react-router-dom";
 import { FavouriteButton } from "./FavouriteButton";
+import { openTrailerModal } from "../store/slices/trailerSlice";
 
 export const HeroSection = () => {
+
   const dispatch = useAppDispatch();
   const { randomMovie } = useAppSelector((state) => state.movie);
+
+  const handleOpenTrailer = () => {
+    if(randomMovie?.trailerYouTubeId && randomMovie.title) {
+      dispatch(openTrailerModal({
+        title: randomMovie.title,
+        youtubeId: randomMovie.trailerYouTubeId
+      }))
+    }
+  }
 
   useEffect(() => {
     dispatch(fetchRandomMovie());
@@ -30,8 +41,12 @@ export const HeroSection = () => {
                 {randomMovie?.tmdbRating}
               </li>
               <li className="hero__top-item">{randomMovie?.releaseYear}</li>
-              <li className="hero__top-item">{randomMovie?.genres?.join(", ")}</li>
-              <li className="hero__top-item">{formatTime(randomMovie?.runtime)}</li>
+              <li className="hero__top-item">
+                {randomMovie?.genres?.join(", ")}
+              </li>
+              <li className="hero__top-item">
+                {formatTime(randomMovie?.runtime)}
+              </li>
             </ul>
             <div className="hero__middle">
               <h2 className="hero__title">{randomMovie?.title}</h2>
@@ -39,7 +54,7 @@ export const HeroSection = () => {
             </div>
             <ul className="hero__bottom">
               <li className="hero__bottom-item">
-                <Button type="button" text="Трейлер" />
+                <Button type="button" text="Трейлер" onClick={handleOpenTrailer} />
               </li>
               <li className="hero__bottom-item">
                 <Link to={`/movie/${randomMovie?.id}`}>
@@ -51,7 +66,7 @@ export const HeroSection = () => {
                 </Link>
               </li>
               <li className="hero__bottom-item">
-                <FavouriteButton movieId={Number(randomMovie?.id)}/>
+                <FavouriteButton movieId={Number(randomMovie?.id)} />
               </li>
               <li className="hero__bottom-item">
                 <button

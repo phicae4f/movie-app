@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { LogoComponent } from "./LogoComponent";
 import { SearchBar } from "../ui/SearchBar";
 import { useAppDispatch, useAppSelector } from "../hooks/redux";
@@ -6,11 +6,18 @@ import { openModal } from "../store/slices/modalSlice";
 
 export const Header = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate()
   const { user } = useAppSelector((state) => state.auth);
 
   const handleLogin = () => {
     dispatch(openModal("login"));
   };
+
+  const handleSearch = (query: string) => {
+    if(query.trim()) {
+      navigate(`/movies?title=${encodeURIComponent(query)}`)
+    }
+  }
 
   return (
     <header className="header">
@@ -47,7 +54,7 @@ export const Header = () => {
               </li>
             </ul>
             <div className="header__search-bar">
-              <SearchBar placeholder="Поиск" name="search-bar" />
+              <SearchBar onSubmit={handleSearch} placeholder="Поиск" name="search-bar" />
             </div>
           </div>
           <div className="header__right">
