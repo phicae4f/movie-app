@@ -1,4 +1,5 @@
 @use "../global/variables" as *;
+@use "../global/mixins" as *;
 
 .search-bar {
   position: relative;
@@ -7,6 +8,13 @@
   background-color: $color-gray;
   $root: &;
   border-radius: 8px;
+
+  @include vp-767 {
+    position: absolute;
+    width: 335px;
+    top: 16px;
+    left: 20px;
+  }
 
   &__icon {
     color: $color-white-50;
@@ -36,6 +44,22 @@
       font-weight: 400;
       font-size: 18px;
       line-height: 24px;
+    }
+  }
+  &__btn-close {
+    display: none;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: $color-white;
+
+    @include vp-767 {
+      display: flex;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
     }
   }
 

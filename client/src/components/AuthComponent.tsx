@@ -90,8 +90,10 @@ export const AuthComponent = ({
             <LogoComponent
               width={133}
               height={30}
-              imgSrc="/img/desktop/logo-img.png"
-              imgSrcSet="/img/desktop/logo-img@2x.png"
+              mobileSrc="/img/mobile/logo-black.png"
+              mobileSrc2x="/img/mobile/logo-black@2x.png"
+              desktopSrc="/img/desktop/logo-img.png"
+              desktopSrc2x="/img/desktop/logo-img@2x.png"
             />
           </div>
           <h2 className="auth__title">Регистрация завершена</h2>
@@ -121,8 +123,8 @@ export const AuthComponent = ({
             <LogoComponent
               width={133}
               height={30}
-              imgSrc="/img/desktop/logo-img.png"
-              imgSrcSet="/img/desktop/logo-img@2x.png"
+              desktopSrc="/img/desktop/logo-img.png"
+              desktopSrc2x="/img/desktop/logo-img@2x.png"
             />
           </div>
           {error && <span className="auth__error">{error}</span>}
@@ -174,8 +176,8 @@ export const AuthComponent = ({
             <LogoComponent
               width={133}
               height={30}
-              imgSrc="/img/desktop/logo-img.png"
-              imgSrcSet="/img/desktop/logo-img@2x.png"
+              desktopSrc="/img/desktop/logo-img.png"
+              desktopSrc2x="/img/desktop/logo-img@2x.png"
             />
           </div>
           <h2 className="auth__title">Регистрация</h2>

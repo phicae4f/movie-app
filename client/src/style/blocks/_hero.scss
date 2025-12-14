@@ -1,14 +1,23 @@
 @use "../global/variables" as *;
+@use "../global/mixins" as *;
 
 .hero {
   width: 100%;
   padding: 32px 0 43px;
+
+  @include vp-767 {
+    padding: 0 0 32px;
+  }
 
   &__wrapper {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include vp-767 {
+      flex-direction: column-reverse;
+    }
   }
 
   &__info {
@@ -17,18 +26,34 @@
     gap: 16px;
     align-items: flex-start;
     max-width: 600px;
+
+    @include vp-767 {
+      max-width: 100%;
+      gap: 12px;
+    }
   }
 
   &__top {
     display: flex;
     align-items: center;
     gap: 16px;
+
+    @include vp-767 {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 
   &__top-item {
     font-size: 18px;
     line-height: 24px;
     color: $color-white-70;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
     &:nth-child(1) {
       display: flex;
       align-items: center;
@@ -47,6 +72,11 @@
     gap: 16px;
     align-items: flex-start;
     margin-bottom: 44px;
+
+    @include vp-767 {
+      gap: 12px;
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
@@ -56,16 +86,25 @@
     font-size: 48px;
     line-height: 56px;
     text-align: left;
+
+    @include vp-767 {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
 
   &__plot {
     text-align: left;
-
     margin: 0;
     color: $color-white-70;
     font-weight: 400;
     font-size: 24px;
     line-height: 32px;
+
+    @include vp-767 {
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 
   &__bottom {
@@ -73,12 +112,33 @@
     gap: 16px;
     align-items: center;
     width: 100%;
+
+    @include vp-767 {
+      display: grid;
+      align-items: unset;
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: repeat(2, max-content);
+      gap: 16px;
+    }
   }
 
   &__bottom-item {
     &:nth-child(1),
     &:nth-child(2) {
       min-width: 171px;
+    }
+
+    &:nth-child(1) {
+      @include vp-767 {
+        grid-column: 1/6;
+        width: 335px;
+      }
+    }
+
+    &:nth-child(2) {
+      @include vp-767 {
+        min-width: 167px;
+      }
     }
   }
 
@@ -110,6 +170,12 @@
       border-radius: 16px;
       width: 100%;
       height: 100%;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      height: 234px;
+      margin-bottom: 24px;
     }
   }
 }

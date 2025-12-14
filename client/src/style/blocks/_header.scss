@@ -1,4 +1,5 @@
 @use "../global/variables" as *;
+@use "../global/mixins" as *;
 
 .header {
   width: 100%;
@@ -12,12 +13,39 @@
     display: flex;
     align-items: center;
     gap: 80px;
+
+    @include vp-767 {
+      gap: 20px;
+      padding: 16px 0;
+    }
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    width: 144px;
+    height: 32px;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include vp-767 {
+      width: 80px;
+      height: 32px;
+      margin-right: auto;
+    }
   }
 
   &__middle {
     display: flex;
     align-items: center;
     gap: 40px;
+
+    @include vp-767 {
+      gap: 20px;
+    }
   }
 
   &__list {
@@ -36,7 +64,7 @@
       line-height: 32px;
       color: $color-white;
       transition: color $transition-300;
-      
+
       &.active {
         &::after {
           position: absolute;
@@ -48,8 +76,27 @@
           background-color: $color-pink;
         }
       }
+
+      span {
+        @include vp-767 {
+          display: none;
+        }
+      }
     }
 
+    svg {
+      display: none;
+
+      @include vp-767 {
+        display: flex;
+      }
+    }
+
+    &:nth-child(1) {
+      @include vp-767 {
+        display: none;
+      }
+    }
 
     &:hover,
     &:focus-visible {
@@ -67,6 +114,67 @@
 
   &__search-bar {
     width: 656px;
+
+    form {
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    //  button {
+    //   display: none;
+
+    //   @include vp-767 {
+    //     display: flex;
+    //     border: none;
+    //     padding: 0;
+    //     background-color: transparent;
+    //     color: $color-white;
+    //   }
+
+    //   svg {
+    //   display: none;
+
+    //   @include vp-767 {
+    //     display: flex;
+    //   }
+    // }
+
+    // }
+
+    &.open {
+      @include vp-767 {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background-color: $color-black-50;
+
+        form {
+          display: flex;
+        }
+
+        #{$root}__btn-toggle {
+          display: none;
+        }
+      }
+    }
+
+    @include vp-767 {
+      width: auto;
+    }
+  }
+
+  &__btn-toggle {
+    display: none;
+    background-color: transparent;
+    color: $color-white;
+    border: none;
+    padding: 0;
+    @include vp-767 {
+      display: flex;
+    }
   }
 
   &__btn {
@@ -83,6 +191,20 @@
     &:hover,
     &:focus-visible {
       color: $color-white-50;
+    }
+
+    span {
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    svg {
+      display: none;
+
+      @include vp-767 {
+        display: flex;
+      }
     }
   }
 }
