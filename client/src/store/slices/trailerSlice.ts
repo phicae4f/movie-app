@@ -1,5 +1,4 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { openModal } from "./modalSlice";
 
 interface TrailerState {
     isOpen: boolean,

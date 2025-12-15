@@ -17,10 +17,6 @@ export const Header = () => {
     setIsSearchOpen(!isSearchOpen);
   };
 
-  const handleCloseSearch = () => {
-    setIsSearchOpen(false);
-  };
-
   const handleLogin = () => {
     dispatch(openModal("login"));
   };

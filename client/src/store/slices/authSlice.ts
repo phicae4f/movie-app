@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
-import type { Movie } from "./movieSlice";
 
 interface AuthState {
   user: null | {

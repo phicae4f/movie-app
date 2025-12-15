@@ -1,7 +1,7 @@
-import { useState, type InputHTMLAttributes } from "react";
+import { useState } from "react";
 import { Icon } from "./Icon";
 
-interface SearchBarProps extends InputHTMLAttributes<HTMLElement> {
+interface SearchBarProps {
   placeholder: string;
   name: string;
   onSubmit: (query: string) => void;

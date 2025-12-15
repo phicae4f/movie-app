@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/redux";
 import { fetchRandomMovie } from "../store/slices/movieSlice";
 import { Button } from "../ui/Button";

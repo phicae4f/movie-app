@@ -63,14 +63,6 @@ export const TrailerModal = ({
     }
   };
 
-  const togglePlayPause = () => {
-    if (isPlaying) {
-      handlePause();
-    } else {
-      handlePlay();
-    }
-  };
-
   // Клик вне модалки
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
