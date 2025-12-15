@@ -1,14 +1,23 @@
 @use "../global/variables" as *;
+@use "../global/mixins" as *;
 
 .genre-page {
     padding: 64px 0 160px;
     width: 100%;
+
+    @include vp-767 {
+        padding: 16px 0 40px;
+    }
 
     &__wrapper {
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 64px;
+
+        @include vp-767 {
+            gap: 40px;
+        }
     }
 
     &__title {
@@ -17,6 +26,11 @@
         font-size: 48px;
         line-height: 56px;
         color: $color-white;
+
+        @include vp-767 {
+            font-size: 24px;
+            line-height: 32px;
+        }
     }
 
     &__list {
@@ -24,6 +38,11 @@
         display: flex;
         flex-wrap: wrap;
         gap: 64px 40px;
+
+        @include vp-767 {
+            flex-direction: column;
+            gap: 24px;
+        }
     }
 
     &__item {
@@ -37,6 +56,10 @@
             width: 100%;
             height: 220px;
             border-radius: 24px 24px 0 0;
+        }
+
+        @include vp-767 {
+            width: 100%;
         }
     }
 

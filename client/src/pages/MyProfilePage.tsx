@@ -61,7 +61,8 @@ export const MyProfilePage = () => {
             >
               <button type="button" onClick={() => setActive("favorites")}>
                 <Icon name="icon-heart" width={24} height={24} />
-                Избранные фильмы
+                <span className="desktop-text">Избранные фильмы</span>
+                <span className="mobile-text">Избранное</span>
               </button>
             </li>
             <li
@@ -71,7 +72,8 @@ export const MyProfilePage = () => {
             >
               <button type="button" onClick={() => setActive("settings")}>
                 <Icon name="icon-user" width={24} height={24} />
-                Настройка аккаунта
+                <span className="desktop-text">Настройка аккаунта</span>
+                <span className="mobile-text">Настройка</span>
               </button>
             </li>
           </ul>

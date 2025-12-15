@@ -89,6 +89,7 @@ export const FilteredMoviesPage = () => {
                 ))}
               </ul>
               <Button
+              className="btn filters-page__btn-more"
                 type="button"
                 text={isLoading ? "Загрузка..." : "Показать еще"}
                 disabled={isLoading}

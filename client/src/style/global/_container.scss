@@ -2,13 +2,13 @@
 @use "./mixins" as *;
 
 .container {
-    margin: 0 auto;
-    width: 1280px;
-    padding: 0 80px;
-    width: 100%;
+  margin: 0 auto;
+  width: 1280px;
+  padding: 0 80px;
+  width: 100%;
 
-    @include vp-767 {
-        width: 375px;
-        padding: 0 20px;
-    }
+  @include vp-767 {
+    width: 375px;
+    padding: 0 20px;
+  }
 }
